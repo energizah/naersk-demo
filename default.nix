@@ -1,3 +1,5 @@
+{ pkgs ? import <nixpkgs> { } }:
+
 let
   pkgs = import <nixpkgs> {};
   sources = import ./nix/sources.nix;
