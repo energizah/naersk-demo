@@ -1,6 +1,8 @@
+{ pkgs ? import <nixpkgs> {} }:
 let
-    pkgs = import <nixpkgs> {};
-    sources = import ./nix/sources.nix;
-    naersk = pkgs.callPackage sources.naersk {};
+  grex = ./.;
+
 in
-naersk.buildPackage sources.grex
+pkgs.mkShell {
+    buildInputs = [grex];
+}
